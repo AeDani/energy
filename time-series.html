@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/utils/energy.js"></script>
+    <title>Peak / Off-Peak</title>
+</head>
+
+<body>
+
+    <div class="nav-bar">
+        <a class="nav-link" href="/#">Home</a>
+    </div>
+
+    <div id="page">
+        <div class="settings">
+
+            <h1>Generate time stamps</h1>
+
+            <div>
+                <label for="date-time-start">Start Zeit</label>
+                <input type="datetime-local" id="date-time-start" step="900" value="2020-01-01T00:00" required>
+            </div>
+            <div>
+                <label for="date-time-start">End Zeit</label>
+                <input type="datetime-local" id="date-time-end" value="2020-01-02T00:00" step="900" required>
+            </div>
+            <div>
+                <label for="granularity">Granularität der Zeitreihe</label>
+                <select name="granularity" id="granularity" required>
+                    <option value="0">1 h</option>
+                    <option value="1">1/4 h</option>
+                </select>
+            </div>
+            <div hidden>
+                <label for="time-type">Von- oder Bis-Zeit</label>
+                <select name="time-type" id="time-type" required>
+                    <option value="1">Von-Zeit</option>
+                    <option value="2" value="to">Bis-Zeit</option>
+                </select>
+            </div>
+
+            <button id="generate">Generate Time Series</button>
+        </div>
+
+        <div id="input-error"></div>
+
+        <h2>Timestamp | DayOfWeek (sun=0) | isPeak=1</h2>
+
+        <div>
+            <ul id="time-stamps">
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="/js/time-series.js"></script>
+</body>
+
+</html>

@@ -96,7 +96,7 @@ class Energy {
 	}
 
 	/**
-	 * Milliseconds for an hour or a quarter hour
+	 * Milliseconds for a hour or a quarter hour
 	 * @param {Number} timeGranularity 0 for a 1h, 1 for a 1/4h
 	 * @return {Number} milliseconds for a hour or a quarter hour
 	 */
